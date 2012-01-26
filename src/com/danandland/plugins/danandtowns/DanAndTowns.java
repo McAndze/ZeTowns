@@ -1,16 +1,17 @@
 package com.danandland.plugins.danandtowns;
 
-import org.bukkit.event.Event;
-import org.bukkit.event.Event.Priority;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import com.danandland.plugins.danandtowns.listeners.DABlockListener;
+import com.danandland.plugins.danandtowns.listeners.DAPlayerListener;
 
 public class DanAndTowns extends JavaPlugin {
 	public static final String name = "DanAndTowns";
 	public static final String tag = "DAT";
 	
 	
-	private DAPlayerListenerH highPlayerListener;
-	private DABlockListenerH highBlockListener;
+	private DAPlayerListener highPlayerListener;
+	private DABlockListener highBlockListener;
 
 	@Override
 	public void onDisable() {
@@ -20,11 +21,8 @@ public class DanAndTowns extends JavaPlugin {
 
 	@Override
 	public void onEnable() {
-		this.highPlayerListener = new DAPlayerListenerH(this);
-		this.highBlockListener = new DABlockListenerH(this);
-		
-		this.getServer().getPluginManager().registerEvent(Event.Type.PLAYER_INTERACT, highPlayerListener, Priority.High, this);
-		this.getServer().getPluginManager().registerEvent(Event.Type.BLOCK_BREAK, highBlockListener, Priority.High, this);
+		this.highPlayerListener = new DAPlayerListener(this);
+		this.highBlockListener = new DABlockListener(this);
 	}
 
 }

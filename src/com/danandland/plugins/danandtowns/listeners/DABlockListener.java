@@ -1,17 +1,23 @@
-package com.danandland.plugins.danandtowns;
+package com.danandland.plugins.danandtowns.listeners;
 
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
+import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
 
-public class DABlockListenerH extends DABlockListener{
-	
-	public DABlockListenerH(DanAndTowns instance){
-		super(instance);
+import com.danandland.plugins.danandtowns.DAPlayerListenerH;
+import com.danandland.plugins.danandtowns.DanAndTowns;
+
+public class DABlockListener implements Listener{
+	private DanAndTowns instance;
+	public DABlockListener(DanAndTowns instance){
+		this.instance = instance;
 	}
 
-	@Override
+	@EventHandler(priority = EventPriority.HIGH)
 	public void onBlockBreak(BlockBreakEvent event) {
 		Block evBlock = event.getBlock();
 		Player player;
@@ -30,7 +36,7 @@ public class DABlockListenerH extends DABlockListener{
 		}
 	}
 
-	@Override
+	@EventHandler(priority = EventPriority.HIGH)
 	public void onBlockPlace(BlockPlaceEvent event) {
 		
 	}

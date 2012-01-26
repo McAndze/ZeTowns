@@ -1,26 +1,31 @@
-package com.danandland.plugins.danandtowns;
+package com.danandland.plugins.danandtowns.listeners;
 
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
+import org.bukkit.event.Listener;
+import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 
+import com.danandland.plugins.danandtowns.DanAndTowns;
 import com.danandland.plugins.danandtowns.area.TwoPointArea;
-import com.danandland.plugins.danandtowns.listeners.DAPlayerListener;
 import com.danandland.plugins.danandtowns.resident.Resident;
 import com.danandland.plugins.danandtowns.resident.TwoPointAreaMarking;
 
-public class DAPlayerListenerH extends DAPlayerListener {
+public class DAPlayerListener implements Listener{
+	public DanAndTowns instance;
 	
-	public DAPlayerListenerH(DanAndTowns instance) {
-		super(instance);
+	public DAPlayerListener(DanAndTowns instance){
+		this.instance = instance;
 	}
 	
 	private Location testLocation = null;
 	private Location testLocation2 = null;
 
-	@Override
+	@EventHandler(priority = EventPriority.HIGH)
 	public void onPlayerInteract(PlayerInteractEvent event) {
 		Player player = event.getPlayer();
 		if (resident == null){
@@ -68,4 +73,46 @@ public class DAPlayerListenerH extends DAPlayerListener {
 	/**
 	 * \TESTING
 	 */
+	
+	/**
+	 * 
+	 * @param event
+	 * @param type 
+	 * @return null if no block or air is involved, or if action does not equal action parsed.
+	 */
+	public Block getBlockInteracted(PlayerInteractEvent event, Material type, Action action){
+		Material inHandType = event.getItem().getType();
+		Action eventAction = event.getAction();
+		
+		
+		// Return null if there is no block involved.
+		if (!event.hasBlock()){
+			return null;
+		}
+		
+		
+		/*
+		 * if type equals null, the type doesn't matter.
+		 */
+		if (type.equals(null)){
+			// Action doesn't matter?
+			if (action == null){
+				return event.getClickedBlock();
+			} else if (eventAction.equals(action)){
+				return event.getClickedBlock();
+			}
+		// Correct material?	
+		} else if (inHandType.equals(type)){
+			// Action doesn't matter?
+			if (action == null){
+				return event.getClickedBlock();
+			} else if (eventAction.equals(action)){
+				return event.getClickedBlock();
+			}
+		}
+		
+		// Couldn't find block, return null.
+		return null;
+	}
+
 }
