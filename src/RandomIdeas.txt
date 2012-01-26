@@ -1,0 +1,2 @@
+* Feather to check area information.
+* Factions-inspired power - If you have negative power, you residence in a town will not be counted, when calculating the town area.
