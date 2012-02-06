@@ -1,4 +1,9 @@
-package com.danandland.plugins.danandtowns.listeners;
+package me.mcandze.bukkit.plugins.listeners;
+
+import me.mcandze.bukkit.plugins.ZeTowns;
+import me.mcandze.bukkit.plugins.area.TwoPointArea;
+import me.mcandze.bukkit.plugins.resident.Resident;
+import me.mcandze.bukkit.plugins.resident.TwoPointAreaMarking;
 
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -10,15 +15,11 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 
-import com.danandland.plugins.danandtowns.DanAndTowns;
-import com.danandland.plugins.danandtowns.area.TwoPointArea;
-import com.danandland.plugins.danandtowns.resident.Resident;
-import com.danandland.plugins.danandtowns.resident.TwoPointAreaMarking;
 
-public class DAPlayerListener implements Listener{
-	public DanAndTowns instance;
+public class ZePlayerListener implements Listener{
+	public ZeTowns instance;
 	
-	public DAPlayerListener(DanAndTowns instance){
+	public ZePlayerListener(ZeTowns instance){
 		this.instance = instance;
 	}
 	
@@ -40,7 +41,7 @@ public class DAPlayerListener implements Listener{
 				 * TESTING
 				 */
 				if ((area = (TwoPointArea)resident.getAreaMarking().getArea()) != null){
-					player.sendMessage("§6[" + DanAndTowns.tag + "]§f Area created!");
+					player.sendMessage("§6[" + ZeTowns.tag + "]§f Area created!");
 				}
 				/**
 				 * \TESTING
@@ -54,9 +55,9 @@ public class DAPlayerListener implements Listener{
 			if (event.hasBlock()){
 				Block block = event.getClickedBlock();
 				if (area.isLocationInArea(block.getLocation())){
-					player.sendMessage("§6[" + DanAndTowns.tag + "]§f Location in area!");
+					player.sendMessage("§6[" + ZeTowns.tag + "]§f Location in area!");
 				} else {
-					player.sendMessage("§6[" + DanAndTowns.tag + "]§f Location not in area!");
+					player.sendMessage("§6[" + ZeTowns.tag + "]§f Location not in area!");
 				}
 			}
 			/**

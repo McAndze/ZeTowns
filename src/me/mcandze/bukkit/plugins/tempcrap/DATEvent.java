@@ -1,9 +1,10 @@
-package com.danandland.plugins.danandtowns.tempcrap;
+package me.mcandze.bukkit.plugins.tempcrap;
+
+import me.mcandze.bukkit.plugins.area.Area;
+import me.mcandze.bukkit.plugins.resident.Resident;
 
 import org.bukkit.World;
 
-import com.danandland.plugins.danandtowns.area.Area;
-import com.danandland.plugins.danandtowns.resident.Resident;
 
 public class DATEvent {
 	private World world;

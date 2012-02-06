@@ -1,4 +1,4 @@
-package com.danandland.plugins.danandtowns.cmds;
+package me.mcandze.bukkit.plugins.cmds;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;

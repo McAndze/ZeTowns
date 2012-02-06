@@ -1,6 +1,6 @@
-package com.danandland.plugins.danandtowns.resident;
+package me.mcandze.bukkit.plugins.resident;
 
-import com.danandland.plugins.danandtowns.tempcrap.Town;
+import me.mcandze.bukkit.plugins.tempcrap.Town;
 
 public class Resident extends DATPlayer{
 	

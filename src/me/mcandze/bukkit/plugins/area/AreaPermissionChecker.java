@@ -1,8 +1,9 @@
-package com.danandland.plugins.danandtowns.area;
+package me.mcandze.bukkit.plugins.area;
+
+import me.mcandze.bukkit.plugins.tempcrap.DATEvent;
 
 import org.bukkit.entity.Player;
 
-import com.danandland.plugins.danandtowns.tempcrap.DATEvent;
 
 public class AreaPermissionChecker {
 	public static boolean playerHasPermission(AreaPerms.Permission perm, Player player, DATEvent event){

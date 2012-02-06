@@ -1,4 +1,4 @@
-package com.danandland.plugins.danandtowns.area;
+package me.mcandze.bukkit.plugins.area;
 
 import java.util.HashMap;
 

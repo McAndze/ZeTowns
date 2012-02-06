@@ -1,4 +1,8 @@
-package com.danandland.plugins.danandtowns.resident;
+package me.mcandze.bukkit.plugins.resident;
+
+import me.mcandze.bukkit.plugins.ZeTowns;
+import me.mcandze.bukkit.plugins.area.Area;
+import me.mcandze.bukkit.plugins.area.TwoPointArea;
 
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -7,9 +11,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 
-import com.danandland.plugins.danandtowns.DanAndTowns;
-import com.danandland.plugins.danandtowns.area.Area;
-import com.danandland.plugins.danandtowns.area.TwoPointArea;
 
 public class TwoPointAreaMarking implements AreaMarking{
 	public static int MARKING_ITEM = Material.WOOD_HOE.getId();
@@ -50,12 +51,12 @@ public class TwoPointAreaMarking implements AreaMarking{
 		Action action = event.getAction();
 		if (action.equals(Action.LEFT_CLICK_BLOCK)){
 			location1 = block.getLocation();
-			player.sendMessage("§6[" + DanAndTowns.tag + "]§f First point marked.");
+			player.sendMessage("§6[" + ZeTowns.tag + "]§f First point marked.");
 			event.setCancelled(true);
 			return true;
 		} else if (action.equals(Action.RIGHT_CLICK_BLOCK)){
 			location2 = block.getLocation();
-			player.sendMessage("§6[" + DanAndTowns.tag + "]§f Second point marked.");
+			player.sendMessage("§6[" + ZeTowns.tag + "]§f Second point marked.");
 			event.setCancelled(true);
 			return true;
 		}

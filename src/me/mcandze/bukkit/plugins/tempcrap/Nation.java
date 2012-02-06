@@ -1,12 +1,13 @@
-package com.danandland.plugins.danandtowns.tempcrap;
+package me.mcandze.bukkit.plugins.tempcrap;
 
 import java.util.Set;
 
-import com.danandland.plugins.danandtowns.DanAndTowns;
+import me.mcandze.bukkit.plugins.ZeTowns;
+
 
 public class Nation {
 	// Plugin
-	private DanAndTowns instance;
+	private ZeTowns instance;
 	
 	private String name;
 	// Towns in this nation.
@@ -14,7 +15,7 @@ public class Nation {
 	private Set<Nation> enemies;
 	
 	
-	public Nation(DanAndTowns instance, String name){
+	public Nation(ZeTowns instance, String name){
 		this.instance = instance;
 		this.name = name;
 	}

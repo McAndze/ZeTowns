@@ -1,4 +1,4 @@
-package com.danandland.plugins.danandtowns.resident;
+package me.mcandze.bukkit.plugins.resident;
 
 import java.util.Set;
 import java.util.TreeSet;
