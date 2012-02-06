@@ -3,6 +3,7 @@ package com.danandland.plugins.danandtowns.resident;
 import java.util.Set;
 import java.util.TreeSet;
 
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
 public class DATPlayer {
@@ -10,7 +11,7 @@ public class DATPlayer {
 	public static int MIN_POWER = -10;
 	
 	/*protected*/public String player;
-	private Set<Player> friends;
+	private Set<String> friends;
 	private int power;
 	
 	// Area marking
@@ -19,7 +20,7 @@ public class DATPlayer {
 	public DATPlayer(String player){
 		this.player = player;
 		this.areaMarking = new TwoPointAreaMarking();
-		this.friends = new TreeSet<Player>();
+		this.friends = new TreeSet<String>();
 		/**
 		 * TESTING
 		 */
@@ -31,5 +32,14 @@ public class DATPlayer {
 
 	public AreaMarking getAreaMarking() {
 		return areaMarking;
+	}
+	
+	public void addFriend(Player player){
+		String name = player.getName();
+		addFriend(name);
+	}
+	
+	public void addFriend(String string){
+		this.friends.add(string);
 	}
 }
