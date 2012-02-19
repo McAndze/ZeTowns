@@ -1,7 +1,6 @@
-package me.mcandze.bukkit.plugins.listeners;
+package me.mcandze.plugins.zetowns.listeners;
 
-import me.mcandze.bukkit.plugins.ZePlayerListenerH;
-import me.mcandze.bukkit.plugins.ZeTowns;
+import me.mcandze.plugins.zetowns.ZeTowns;
 
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
@@ -24,17 +23,7 @@ public class ZeBlockListener implements Listener{
 		Player player;
 		boolean hasPlayer = (player=event.getPlayer()) != null;
 		
-		if (event.getPlayer() != null){
-			// Check if block is in an area.
-			if (ZePlayerListenerH.area != null){
-				if (ZePlayerListenerH.area.isLocationInArea(evBlock.getLocation())){
-					if (ZePlayerListenerH.resident != null){
-						instance.getServer().getPlayerExact(ZePlayerListenerH.resident.player).sendMessage("No protection (normally).");
-					}
-					event.setCancelled(true);
-				}
-			}
-		}
+		
 	}
 
 	@EventHandler(priority = EventPriority.HIGH)

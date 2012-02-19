@@ -1,7 +1,7 @@
-package me.mcandze.bukkit.plugins;
+package me.mcandze.plugins.zetowns;
 
-import me.mcandze.bukkit.plugins.listeners.ZeBlockListener;
-import me.mcandze.bukkit.plugins.listeners.ZePlayerListener;
+import me.mcandze.plugins.zetowns.listeners.ZeBlockListener;
+import me.mcandze.plugins.zetowns.listeners.ZePlayerListener;
 
 import org.bukkit.plugin.java.JavaPlugin;
 

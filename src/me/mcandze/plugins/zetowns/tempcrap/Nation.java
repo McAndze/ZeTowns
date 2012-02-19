@@ -1,8 +1,8 @@
-package me.mcandze.bukkit.plugins.tempcrap;
+package me.mcandze.plugins.zetowns.tempcrap;
 
 import java.util.Set;
 
-import me.mcandze.bukkit.plugins.ZeTowns;
+import me.mcandze.plugins.zetowns.ZeTowns;
 
 
 public class Nation {
